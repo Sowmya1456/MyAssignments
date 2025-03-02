@@ -12,6 +12,7 @@ public class Chrome {
 		System.err.println("Version of chrome:"+version);
 		System.out.println("Developer:"+developer);
 		System.out.println("isBeta:"+isBeta+" "+"Release Year:"+releaseYear+" "+"Short Cut Key:"+shortCutKey);
+
 	}
 
 }
