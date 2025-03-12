@@ -14,7 +14,7 @@ public class CreateLeads {
 		driver.findElement(By.id("password")).sendKeys("crmsfa");
 		driver.findElement(By.className("decorativeSubmit")).click();
 		
-		driver.findElement(By.partialLinkText("CRM/SFA")).click();
+		driver.findElement(By.partialLinkText("CRM")).click();
 		
 		driver.findElement(By.linkText("Leads")).click();
 		driver.findElement(By.linkText("Create Lead")).click();
@@ -25,8 +25,12 @@ public class CreateLeads {
 		driver.findElement(By.id("createLeadForm_generalProfTitle")).sendKeys("Test Lead");
 		driver.findElement(By.className("smallSubmit")).click();
 		
-		System.out.println("Title of the page="+driver.getTitle());
-		driver.quit();		   
+		String title=driver.getTitle();
+		String expectedTitle="View Lead | opentaps CRM";
+		if(title.equals(expectedTitle)) {
+			System.out.println(title);
+		}	
+		driver.close();		   
 	}
 
 }

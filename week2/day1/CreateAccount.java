@@ -14,20 +14,25 @@ public class CreateAccount {
 		driver.findElement(By.id("password")).sendKeys("crmsfa");
 		driver.findElement(By.className("decorativeSubmit")).click();
 		
-		driver.findElement(By.partialLinkText("CRM/SFA")).click();
+		driver.findElement(By.partialLinkText("CRM")).click();
 		
 		driver.findElement(By.linkText("Accounts")).click();
 		driver.findElement(By.linkText("Create Account")).click();
 		
-		driver.findElement(By.id("accountName")).sendKeys("March-2025");
-		driver.findElement(By.className("inputBox")).sendKeys("Selenium Automation Tester");
+		driver.findElement(By.id("accountName")).sendKeys("March-2019");
+		driver.findElement(By.name("description")).sendKeys("Selenium Automation Tester");
 		driver.findElement(By.id("numberEmployees")).sendKeys("1");
 		driver.findElement(By.id("officeSiteName")).sendKeys("LeafTaps");
 		driver.findElement(By.className("smallSubmit")).click();
 		
 		String title=driver.getTitle();
-		System.out.println("Title="+title);
-		//driver.close();		  
+		String expectedTitle="Account Details | opentaps CRM";
+		if(title.equals(expectedTitle)) {
+			System.out.println(title);
+		}	
+		
+		  
+		driver.close();	    
 		
 	}  
 

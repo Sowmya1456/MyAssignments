@@ -15,6 +15,11 @@ public class AutomateFacebookLogin {
 		  driver.findElement(By.id("pass")).sendKeys("Tuna@321");
 		  driver.findElement(By.tagName("button")).click();
 		  driver.findElement(By.linkText("Find your account and log in.")).click();
-		  System.out.println(driver.getTitle());
-	}
+		  String title=driver.getTitle();
+		  String expectedTitle="Forgotten Password | Can't Log In | Facebook";
+		  if(title.equals(expectedTitle)) {
+			  System.out.println(title);
+		  }
+		  
+	} 
 }
